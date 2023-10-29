@@ -1,5 +1,6 @@
-import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
+import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne, OneToMany } from "typeorm";
 import { BlogEntity } from "./blog.entity";
+import { categoryEntity } from "./category.entity";
 
 @Entity('article', { schema: 'notice' })
 export class ArticleEntity {
@@ -33,7 +34,8 @@ export class ArticleEntity {
     //-----Relaciones--------
     @ManyToOne(() => BlogEntity, blog => blog.article)
     blog: BlogEntity
-
+    @OneToMany(() => categoryEntity, (category) => category.article)
+    category: categoryEntity[]
     //-----Fin Relaciones--------
 
     @Column('varchar', {

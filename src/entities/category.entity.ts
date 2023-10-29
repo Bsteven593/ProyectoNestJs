@@ -1,5 +1,6 @@
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
 import { communityEntity } from "./community.entity";
+import { ArticleEntity } from "./article.entity";
 
 @Entity('category', {schema: 'categoria'})
 export class categoryEntity{
@@ -28,6 +29,8 @@ export class categoryEntity{
     //! Relaciones
     @ManyToOne(() => communityEntity, (community) => community.category)
     community: communityEntity
+    @ManyToOne(() => ArticleEntity, (article) => article.category)
+    article: ArticleEntity
 
     @Column('varchar', {
         name: 'categoria',
