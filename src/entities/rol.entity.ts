@@ -1,9 +1,9 @@
-import { Entity, PrimaryColumn, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate } from "typeorm";
 
 @Entity('rol', { schema: 'rol' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    id: string;
 
     @CreateDateColumn({
         name: 'create_at',
@@ -27,29 +27,26 @@ export class UserEntity {
     })
     deleteaAt: Date;
 
-    postOne: string;
     @Column('varchar', {
         name: 'post1',
         nullable: true,
         comment: 'one name'
-
     })
+    postOne: string;
 
-    postTwo: string;
     @Column('varchar', {
         name: 'post2',
         nullable: true,
         comment: 'two name'
-
     })
+    postTwo: string;
 
-    postThree: string;
     @Column('varchar', {
         name: 'post3',
         nullable: true,
         comment: 'three name'
-
     })
+    postThree: string;
 
     @BeforeInsert()
     @BeforeUpdate()
@@ -77,8 +74,4 @@ export class UserEntity {
         }
         this.postThree = this.postThree.toUpperCase();
     }
-
-
-
-   
 }

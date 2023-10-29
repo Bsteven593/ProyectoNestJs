@@ -1,9 +1,9 @@
-import { Entity, PrimaryColumn, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate } from "typeorm";
 
 @Entity('users', { schema: 'user' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
-    id: string
+    id: string;
 
     @CreateDateColumn({
         name: 'create_at',

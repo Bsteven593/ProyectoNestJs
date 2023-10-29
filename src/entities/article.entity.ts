@@ -1,84 +1,78 @@
-import { CreateDateColumn, Entity, PrimaryColumn,UpdateDateColumn,DeleteDateColumn,Column,BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
+import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
 import { BlogEntity } from "./blog.entity";
 
-@Entity('article', {schema:'notice'})
-export class ArticleEntity{
+@Entity('article', { schema: 'notice' })
+export class ArticleEntity {
     @PrimaryColumn('uuid')
-    id:String;
+    id: string;
 
-@CreateDateColumn({
-    name:'create_at',
-    type:'timestamp',
-    default: ()=>'Current_timestamp',
-})
+    @CreateDateColumn({
+        name: 'create_at',
+        type: 'timestamp',
+        default: () => 'Current_timestamp',
+    })
 
-createAt:Date;
+    createAt: Date;
 
-@UpdateDateColumn({
-    name:'update_At',
-    type: 'timestamp',
-    default: ()=>'Current_timestamp',
-})
+    @UpdateDateColumn({
+        name: 'update_At',
+        type: 'timestamp',
+        default: () => 'Current_timestamp',
+    })
 
-updateAt:Date;
+    updateAt: Date;
 
-@DeleteDateColumn({
-    name:'delete_At',
-    type:'timestamp',
-    nullable: false,
-     
+    @DeleteDateColumn({
+        name: 'delete_At',
+        type: 'timestamp',
+        nullable: false,
+    })
 
-})
+    deleteAt: Date;
 
-deleteAt:Date;
+    //-----Relaciones--------
+    @ManyToOne(() => BlogEntity, blog => blog.article)
+    blog: BlogEntity
 
-//-----Relaciones--------
-@ManyToOne(()=>BlogEntity,blog=>blog.article)
-blog:BlogEntity
+    //-----Fin Relaciones--------
 
-//-----Fin Relaciones--------
+    @Column('varchar', {
+        name: 'title',
+        nullable: false,
+        comment: 'Article Tittle'
+    })
+    tittle: string;
+    @Column('number', {
+        name: 'number',
+        nullable: false,
+        comment: 'Number article'
+    })
+    number: number;
 
-@Column('varchar', {
-    name:'title',
-    nullable: false,
-    comment:'Article Tittle'
-})
-tittle:string;
-@Column('number', {
-    name: 'number',
-    nullable: false,
-    comment: 'Number article'
-})
-number:number;
+    @Column('varchar', {
+        name: 'description',
+        nullable: true,
+        comment: 'articulo description'
+    })
+    description: string;
 
-@Column('varchar', {
-    name: 'description',
-    nullable: true,
-    comment: 'articulo description'
-})
-description:string;
+    @BeforeInsert()
+    @BeforeUpdate()
 
-@BeforeInsert()
-@BeforeUpdate()
-
-async setTittle() {
-    if(!this.tittle){
-        return
+    async setTittle() {
+        if (!this.tittle) {
+            return
+        }
+        this.tittle = this.tittle.toUpperCase();
     }
-    this.tittle =  this.tittle.toUpperCase();
-}
 
-@BeforeInsert()
-@BeforeUpdate()
+    @BeforeInsert()
+    @BeforeUpdate()
 
-async setDescription() {
-    if(!this.description){
-        return
+    async setDescription() {
+        if (!this.description) {
+            return
+        }
+        this.description = this.description.toLowerCase();
     }
-    this.description =  this.description.toLowerCase();
-}
-
-
-
-
 }
