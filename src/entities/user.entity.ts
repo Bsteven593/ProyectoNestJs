@@ -1,6 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate } from "typeorm";
-
-@Entity('users', { schema: 'user' })
+//David Quiroga - Bryan Latacumba
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate,OneToMany,ManyToOne } from "typeorm";
+import { RolEntity } from "./rol.entity";
+import { BlogEntity } from "./blog.entity";
+@Entity('user', { schema: 'user' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -26,6 +28,16 @@ export class UserEntity {
         nullable: true,
     })
     deleteaAt: Date;
+
+
+    //-----Relaciones--------
+    @OneToMany(() => RolEntity, rol => rol.user)
+    rol: RolEntity[];
+
+    @ManyToOne(() => BlogEntity, blog => blog.user)
+    blog: BlogEntity
+     
+     //-----Fin Relaciones--------
 
     namePk: string;
     @Column('varchar', {

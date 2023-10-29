@@ -1,5 +1,7 @@
+//David Quiroga - Bryan Latacumba
 import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, OneToMany } from "typeorm";
 import { ArticleEntity } from "./article.entity";
+import { UserEntity } from "./user.entity";
 
 @Entity('blog', { schema: 'notice' })
 export class BlogEntity {
@@ -29,6 +31,10 @@ export class BlogEntity {
     //-----Relaciones--------
     @OneToMany(() => ArticleEntity, article => article.blog)
     article: ArticleEntity[];
+    
+    @OneToMany(() => UserEntity, user => user.blog)
+    user: UserEntity[];
+    
     //-----Fin Relaciones--------
 
     @Column('varchar', {

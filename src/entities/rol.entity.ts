@@ -1,7 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate } from "typeorm";
+//David Quiroga - Bryan Latacumba
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate,ManyToOne } from "typeorm";
+import { UserEntity } from "./user.entity";
 
 @Entity('rol', { schema: 'rol' })
-export class UserEntity {
+export class RolEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
@@ -26,6 +28,13 @@ export class UserEntity {
         nullable: true,
     })
     deleteaAt: Date;
+
+     //-----Relaciones--------
+     @ManyToOne(() => UserEntity, user => user.rol)
+     user:UserEntity
+ 
+     
+     //-----Fin Relaciones--------
 
     @Column('varchar', {
         name: 'post1',

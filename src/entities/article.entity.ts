@@ -1,3 +1,4 @@
+//David Quiroga - Bryan Latacumba
 import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
 import { BlogEntity } from "./blog.entity";
 
