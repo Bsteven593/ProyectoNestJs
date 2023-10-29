@@ -1,6 +1,6 @@
 import { Entity, PrimaryColumn, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate } from "typeorm";
 
-@Entity('users', { schema: 'rol' })
+@Entity('users', { schema: 'user' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string
