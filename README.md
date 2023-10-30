@@ -13,3 +13,7 @@ Aportaciones Bryan Latacumba:
 ![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/f734076a-cbd7-41c2-b01a-e4572ac51b8b)
 ![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/71f8bae1-2e6e-4841-857a-f3b2f73580cd)
 ![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/e2d047f9-f036-463c-a6d6-714d5900d023)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/110885930/5ba60b0b-dc97-4b8f-a55b-dfe1bbf5502b)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/110885930/5315bce6-0e68-4e2e-80cb-8234cea787a6)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/110885930/0d79234c-8ec7-4550-9603-c2e604a86f02)
+
