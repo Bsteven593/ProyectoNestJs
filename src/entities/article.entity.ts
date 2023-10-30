@@ -3,6 +3,7 @@
 import { CreateDateColumn,Entity,PrimaryColumn,UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne,OneToMany } from "typeorm";
 import { BlogEntity } from "./blog.entity";
 import { CategoryEntity } from "./category.entity";
+import { CommunityEntity } from "./community.entity";
 
 @Entity('article', { schema: 'notice' })
 export class ArticleEntity {
@@ -36,8 +37,12 @@ export class ArticleEntity {
     //-----Relaciones--------
     @ManyToOne(() => BlogEntity, blog => blog.article)
     blog: BlogEntity
+
     @OneToMany(() => CategoryEntity, category => category.article)
     category: CategoryEntity[]
+
+    @ManyToOne(() => CommunityEntity, community => community.article)
+    community: CommunityEntity
     //-----Fin Relaciones--------
 
     @Column('varchar', {

@@ -2,6 +2,7 @@
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column,BeforeInsert,BeforeUpdate,OneToMany,ManyToOne } from "typeorm";
 import { RolEntity } from "./rol.entity";
 import { BlogEntity } from "./blog.entity";
+import { CommunityEntity } from "./community.entity";
 @Entity('user', { schema: 'user' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
@@ -36,6 +37,9 @@ export class UserEntity {
 
     @ManyToOne(() => BlogEntity, blog => blog.user)
     blog: BlogEntity
+
+    @ManyToOne(() => CommunityEntity, community=> community.user)
+    community: CommunityEntity
      
      //-----Fin Relaciones--------
 

@@ -3,6 +3,8 @@
 
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, OneToMany } from "typeorm";
 import { CategoryEntity } from "./category.entity";
+import { ArticleEntity } from "./article.entity";
+import { UserEntity } from "./user.entity";
 
 
 @Entity('communities', {schema: 'comunidad'})
@@ -33,6 +35,10 @@ export class CommunityEntity{
     //! Relaciones
     @OneToMany(() => CategoryEntity, (category) => category.community)
     category: CategoryEntity[];
+    @OneToMany(() => ArticleEntity, (article) => article.community)
+    article: ArticleEntity[];
+    @OneToMany(() => UserEntity, (user) => user.community)
+    user: UserEntity[];
 
     @Column('varchar', {
         name: 'name',
