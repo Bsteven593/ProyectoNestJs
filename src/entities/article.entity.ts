@@ -1,6 +1,8 @@
+
 //David Quiroga - Bryan Latacumba
-import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
+import { CreateDateColumn,Entity,PrimaryColumn,UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne,OneToMany } from "typeorm";
 import { BlogEntity } from "./blog.entity";
+import { CategoryEntity } from "./category.entity";
 
 @Entity('article', { schema: 'notice' })
 export class ArticleEntity {
@@ -34,7 +36,8 @@ export class ArticleEntity {
     //-----Relaciones--------
     @ManyToOne(() => BlogEntity, blog => blog.article)
     blog: BlogEntity
-
+    @OneToMany(() => CategoryEntity, category => category.article)
+    category: CategoryEntity[]
     //-----Fin Relaciones--------
 
     @Column('varchar', {
