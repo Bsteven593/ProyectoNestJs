@@ -1,73 +1,15 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+Aportaciones David Quiroga: 
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/2d40b3a7-af7f-4a4c-b52f-55bf93ba4025)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/4747600a-2baf-4cdf-8b85-0ef9a33a6398)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/25bbba66-14d1-4f6a-b3f3-7c935da83aa1)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/e38521fd-3e01-4d4c-adc8-f9651f46b220)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/c33322c5-b486-47f1-98e7-43455a6b4aee)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/dfb5ecdf-ed63-4a1c-8fec-7fbe65c9d2ab)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Aportaciones Bryan Latacumba:
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/b9c69bb1-d179-4c40-9de7-99ec04618509)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/84984ae5-841a-43b6-ae49-d101c85d14d7)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/e1d23566-92ba-4ef8-9ea5-0dafa3cd4084)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/f734076a-cbd7-41c2-b01a-e4572ac51b8b)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/71f8bae1-2e6e-4841-857a-f3b2f73580cd)
+![image](https://github.com/Bsteven593/ProyectoNestJs/assets/97131802/e2d047f9-f036-463c-a6d6-714d5900d023)
