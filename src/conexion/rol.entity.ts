@@ -2,7 +2,7 @@
 import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate,ManyToOne } from "typeorm";
 import { UserEntity } from "./user.entity";
 
-@Entity('rol', { schema: 'rol' })
+@Entity('rol', { schema: 'info' })
 export class RolEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -10,14 +10,14 @@ export class RolEntity {
     @CreateDateColumn({
         name: 'create_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
     })
     createAt: Date
 
     @UpdateDateColumn({
         name: 'update_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
 
     })
     updateAt: Date;

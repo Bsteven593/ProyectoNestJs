@@ -5,7 +5,7 @@ import { BlogEntity } from "./blog.entity";
 import { CategoryEntity } from "./category.entity";
 import { CommunityEntity } from "./community.entity";
 
-@Entity('article', { schema: 'notice' })
+@Entity('article', { schema: 'info' })
 export class ArticleEntity {
     @PrimaryColumn('uuid')
     id: string;
@@ -51,7 +51,7 @@ export class ArticleEntity {
         comment: 'Article Tittle'
     })
     tittle: string;
-    @Column('number', {
+    @Column('numeric', {
         name: 'number',
         nullable: false,
         comment: 'Number article'

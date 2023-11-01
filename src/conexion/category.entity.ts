@@ -2,14 +2,14 @@ import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Del
 import { CommunityEntity } from "./community.entity";
 import { ArticleEntity } from "./article.entity";
 
-@Entity('category', {schema: 'categoria'})
+@Entity('category', {schema: 'info'})
 export class CategoryEntity{
     @PrimaryGeneratedColumn('uuid')
     id:string;
     @CreateDateColumn({
         name: 'create_At',
         type: 'timestamp',
-        default: ()=> 'current_timestamp'
+        default: ()=> 'Current_timestamp'
     })
     createAt:Date;
     @UpdateDateColumn({

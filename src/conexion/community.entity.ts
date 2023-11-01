@@ -7,7 +7,7 @@ import { ArticleEntity } from "./article.entity";
 import { UserEntity } from "./user.entity";
 
 
-@Entity('communities', {schema: 'comunidad'})
+@Entity('communities', {schema: 'info'})
 
 export class CommunityEntity{
     @PrimaryGeneratedColumn('uuid')

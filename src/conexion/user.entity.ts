@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Del
 import { RolEntity } from "./rol.entity";
 import { BlogEntity } from "./blog.entity";
 import { CommunityEntity } from "./community.entity";
-@Entity('user', { schema: 'user' })
+@Entity('user', { schema: 'info' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -11,14 +11,14 @@ export class UserEntity {
     @CreateDateColumn({
         name: 'create_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
     })
     createAt: Date
 
     @UpdateDateColumn({
         name: 'update_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
 
     })
     updateAt: Date;
@@ -76,7 +76,7 @@ export class UserEntity {
     })
 
     phone: string;
-    @Column('number', {
+    @Column('numeric', {
         name: 'phone',
         nullable: true,
         comment: 'user phohe'
