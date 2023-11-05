@@ -15,7 +15,7 @@ import { BlogService } from './blog/blog.service';
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: 'Campos0430',//TODO la contraseña varia
+    // password: 'Campos0430',//TODO la contraseña varia
     database: 'ventas',
     autoLoadEntities: true,
     synchronize: true,
