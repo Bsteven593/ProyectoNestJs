@@ -3,7 +3,7 @@ import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Del
 import { RolEntity } from "./rol.entity";
 import { BlogEntity } from "./blog.entity";
 import { CommunityEntity } from "./community.entity";
-@Entity('user', { schema: 'user' })
+@Entity('user', { schema: 'info' })
 export class UserEntity {
     @PrimaryGeneratedColumn('uuid')
     id: string;
@@ -11,14 +11,14 @@ export class UserEntity {
     @CreateDateColumn({
         name: 'create_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
     })
     createAt: Date
 
     @UpdateDateColumn({
         name: 'update_at',
         type: 'timestamp',
-        default: () => 'CURRENTE_TIMESTAMP',
+        default: () => 'CURRENT_TIMESTAMP',
 
     })
     updateAt: Date;
@@ -40,23 +40,29 @@ export class UserEntity {
 
     @ManyToOne(() => CommunityEntity, community=> community.user)
     community: CommunityEntity
-     
      //-----Fin Relaciones--------
 
-    namePk: string;
+    // namePk: string;
+    // @Column('varchar', {
+    //     name: 'Fist_name',
+    //     nullable: true,
+    //     comment: 'user name'
+
+    // })
+
+    // lastnamePk: string;
+    // @Column('varchar', {
+    //     name: 'lastname',
+    //     nullable: true,
+    //     comment: 'user lastname'
+
+    // })
+
+    nick: string;
     @Column('varchar', {
-        name: 'Fist_name',
+        name: 'nick',
         nullable: true,
-        comment: 'user name'
-
-    })
-
-    lastnamePk: string;
-    @Column('varchar', {
-        name: 'lastname',
-        nullable: true,
-        comment: 'user lastname'
-
+        comment: 'users nick'
     })
 
     direction: string;
@@ -76,30 +82,40 @@ export class UserEntity {
     })
 
     phone: string;
-    @Column('number', {
+    @Column('numeric', {
         name: 'phone',
         nullable: true,
         comment: 'user phohe'
 
     })
 
-    @BeforeInsert()
-    @BeforeUpdate()
-    async setNamePk() {
-        if (!this.namePk) {
-            return
-        }
-        this.namePk = this.namePk.toUpperCase();
-    }
+    // @BeforeInsert()
+    // @BeforeUpdate()
+    // async setNamePk() {
+    //     if (!this.namePk) {
+    //         return
+    //     }
+    //     this.namePk = this.namePk.toUpperCase();
+    // }
+
+    // @BeforeInsert()
+    // @BeforeUpdate()
+    // async setTilte() {
+    //     if (!this.lastnamePk) {
+    //         return
+    //     }
+    //     this.lastnamePk = this.lastnamePk.toUpperCase();
+    // }
 
     @BeforeInsert()
     @BeforeUpdate()
-    async setTilte() {
-        if (!this.lastnamePk) {
+    async setNick(){
+        if (!this.nick){
             return
         }
-        this.lastnamePk = this.lastnamePk.toUpperCase();
+        this,this.nick = this.nick.toUpperCase();
     }
+
 
     @BeforeInsert()
     @BeforeUpdate()
@@ -127,11 +143,6 @@ export class UserEntity {
         }
         this.phone =  this.phone.replace(/\D/g, '')
     }
-
-
-    
-
-
 
 }
 

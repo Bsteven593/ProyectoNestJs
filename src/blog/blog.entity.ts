@@ -3,7 +3,7 @@ import { CreateDateColumn, Entity, PrimaryColumn, UpdateDateColumn, DeleteDateCo
 import { ArticleEntity } from "./article.entity";
 import { UserEntity } from "./user.entity";
 
-@Entity('blog', { schema: 'notice' })
+@Entity('blog', { schema: 'info' })
 export class BlogEntity {
     @PrimaryColumn('uuid')
     id: string;
@@ -43,7 +43,7 @@ export class BlogEntity {
         comment: 'Blog Tittle'
     })
     tittle: string;
-    @Column('number', {
+    @Column('numeric', {
         name: 'number',
         nullable: false,
         comment: 'Number Blog'

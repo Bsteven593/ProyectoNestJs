@@ -1,15 +1,9 @@
-
-//David Quiroga - Bryan Latacumba
-
-import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, OneToMany } from "typeorm";
-import { CategoryEntity } from "./category.entity";
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, BeforeInsert, BeforeUpdate, ManyToOne } from "typeorm";
+import { CommunityEntity } from "./community.entity";
 import { ArticleEntity } from "./article.entity";
-import { UserEntity } from "./user.entity";
 
-
-@Entity('communities', {schema: 'comunidad'})
-
-export class CommunityEntity{
+@Entity('category', {schema: 'info'})
+export class CategoryEntity{
     @PrimaryGeneratedColumn('uuid')
     id:string;
     @CreateDateColumn({
@@ -33,43 +27,41 @@ export class CommunityEntity{
     deleteAt:Date;
 
     //! Relaciones
-    @OneToMany(() => CategoryEntity, (category) => category.community)
-    category: CategoryEntity[];
-    @OneToMany(() => ArticleEntity, (article) => article.community)
-    article: ArticleEntity[];
-    @OneToMany(() => UserEntity, (user) => user.community)
-    user: UserEntity[];
+    @ManyToOne(() => CommunityEntity, (community) => community.category)
+    community: CommunityEntity
+    @ManyToOne(() => ArticleEntity, (article) => article.category)
+    article: ArticleEntity
 
     @Column('varchar', {
-        name: 'name',
-        nullable: true,
-        comment: 'Community name'
+        name: 'categoria',
+        nullable: false,
+        comment: 'Category Tittle'
     })
-    name:string;
 
+    categoria:string;
     @Column('varchar', {
         name: 'description',
         nullable: true,
-        comment: 'Community description'
+        comment: 'product description'
     })
     description:string;
 
     @BeforeInsert()
     @BeforeUpdate()
-    async setName(){
-        if(!this.name){
+
+    async setCategory() {
+        if(!this.categoria){
             return
         }
-        this.name = this.name.toLowerCase();
+        this.categoria = this.categoria.toLowerCase();
     }
 
     @BeforeInsert()
     @BeforeUpdate()
-    async setDescrption(){
+    async setDescription(){
         if(!this.description){
             return
         }
         this.description = this.description.toLowerCase();
     }
 }
-
